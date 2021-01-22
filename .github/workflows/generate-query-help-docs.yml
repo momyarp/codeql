@@ -46,6 +46,17 @@ jobs:
     - name: Query help to markdown
       run: |
         PATH="$PATH:codeql-cli/codeql" python codeql/docs/codeql/query-help-markdown.py
+  #  We may need to run this from the internal repo...
+  #  - name: Download CWE coverage artifact
+  #    uses: dawidd6/action-download-artifact@86f3002f4e95a0ad10fa8514fe27e1dbfdcd190c # v2.9.0
+  #    with:
+  #      github_token:
+  #      workflow:
+  #      branch:
+  #      repo:
+  #  - name: Append CWE table to docs overview
+  #    run: |
+  #      cat "cwe-coverage.md" >> "codeql/docs/codeql/query-help/codeql-cwe-coverage.md"
     - name: Run Sphinx for query help
       uses: ammaraskar/sphinx-action@8b4f60114d7fd1faeba1a712269168508d4750d2 # v0.4
       with:
